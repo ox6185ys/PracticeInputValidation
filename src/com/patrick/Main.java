@@ -1,9 +1,10 @@
 package com.patrick;
 import java.util.*;
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         int cups = 0;
         boolean isNumber;// Validation from Absolute Zero on youtube.
         do {System.out.println("How many cups of coffee did you sell today?");
@@ -44,12 +45,14 @@ public class Main {
         price = scanner.nextDouble();
         double teaSales = cupsMoney(cups , price);
 
-        System.out.println("How many cups of cappuccino did you sell today?");
-        cups = scanner.nextInt();
+//        System.out.println("How many cups of cappuccino did you sell today?");
+//        cups = scanner.nextInt();
+//
+//        System.out.println("What does a cup of cappuccino cost?");
+//        price = scanner.nextDouble();
+//        double capSales = cupsMoney(cups , price);
 
-        System.out.println("What does a cup of cappuccino cost?");
-        price = scanner.nextDouble();
-        double capSales = cupsMoney(cups , price);
+        double capSales = getDrinkInfo("cappuccino");
 
         System.out.println("Revenue for the day is ?");
         System.out.println( capSales + teaSales + chocSales  + coffSales);
@@ -59,5 +62,16 @@ public class Main {
     private static double cupsMoney(int cups, double price) {
         double drinkMoney = cups * price;
         return drinkMoney;
+    }
+
+
+    public static double getDrinkInfo(String nameOfDrink){
+        System.out.println("How many cups of " + nameOfDrink + " did you sell today?");
+        int cups = scanner.nextInt();
+
+        System.out.println("What does a cup of cappuccino cost?");
+        double price = scanner.nextDouble();
+        double sales = cupsMoney(cups , price);
+        return sales;
     }
 }
