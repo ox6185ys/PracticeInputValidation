@@ -2,7 +2,7 @@ package com.patrick;
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-//GIT FIX
+
         Scanner scanner = new Scanner(System.in);
         int cups = 0;
         boolean isNumber;// Validation from Absolute Zero on youtube.
